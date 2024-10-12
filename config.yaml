@@ -1,0 +1,21 @@
+project: munis
+
+data:
+  path: el_train.csv
+  batch_size: 64
+  num_workers: 2
+  min_epitope_len: 8
+  max_epitope_len: 15
+  esm_model_name: esm2_t6_8M_UR50D
+
+model:
+  use_flanks: true
+  esm_model_name: esm2_t6_8M_UR50D
+  reset_lm: false
+
+trainer:
+  max_epochs: 4
+  devices: 4
+  accelerator: "gpu"
+  precision: 16-mixed
+  gradient_clip_val: 10.0
