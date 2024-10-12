@@ -45,6 +45,6 @@ Running this example should take under a few seconds with a GPU and under 5 minu
 First download the data from:
 https://data.mendeley.com/preview/5w2zg5jn27?a=e53ed26b-1a4d-4d77-aa76-a0b0d489ac2f
 
-You will only need the `el_train.csv` file. Point the `scripts/config.yaml` to this files's path on your system.
+You will only need the `el_train.csv` file. Point the `config.yaml` to this files's path on your system.
 
 Then, run `python train.py config.yaml` to execute training. It may be useful to check the relevant options under `python train.py --help`.
