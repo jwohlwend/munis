@@ -226,6 +226,11 @@ def main(args):
         data = pd.DataFrame(data)
 
     else:
+        if args.mhc is not None:
+            raise ValueError(
+                "MHC alleles are expecte in the input csv when using the peptide format."
+            )
+
         data = pd.read_csv(args.peptides)
         if "pep" not in data.columns:
             raise ValueError("Peptide column not found.")
@@ -246,13 +251,21 @@ def main(args):
     # Load model ensemble
     if args.checkpoint is not None:
         checkpoints = [args.checkpoint]
+    elif args.use_flanks:
+        checkpoints = [
+            "models/flanks/model1.ckpt",
+            "models/flanks/model2.ckpt",
+            "models/flanks/model3.ckpt",
+            "models/flanks/model4.ckpt",
+            "models/flanks/model5.ckpt",
+        ]
     else:
         checkpoints = [
-            "models/model1.ckpt",
-            "models/model2.ckpt",
-            "models/model3.ckpt",
-            "models/model4.ckpt",
-            "models/model5.ckpt",
+            "models/no-flanks/model1.ckpt",
+            "models/no-flanks/model2.ckpt",
+            "models/no-flanks/model3.ckpt",
+            "models/no-flanks/model4.ckpt",
+            "models/no-flanks/model5.ckpt",
         ]
 
     model = EnsembleMunisModel(checkpoints)
