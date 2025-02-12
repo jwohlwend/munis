@@ -241,11 +241,11 @@ class MunisModel(pl.LightningModule):
 
 
 class EnsembleMunisModel(nn.Module):
-    def __init__(self, checkpoints):
+    def __init__(self, checkpoints, device):
         super().__init__()
         models = []
         for checkpoint in checkpoints:
-            model = MunisModel.load_from_checkpoint(checkpoint)
+            model = MunisModel.load_from_checkpoint(checkpoint, device)
             models.append(model)
         self.models = nn.ModuleList(models)
         self.feats_dim = models[0].feats_dim
