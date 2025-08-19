@@ -43,7 +43,7 @@ Running this example should take under a few seconds with a GPU and under 5 minu
 ## Training a new model
 
 First download the data from:
-https://data.mendeley.com/preview/5w2zg5jn27?a=e53ed26b-1a4d-4d77-aa76-a0b0d489ac2f
+https://data.mendeley.com/datasets/5w2zg5jn27
 
 You will only need the `el_train.csv` file. Point the `config.yaml` to this files's path on your system.
 
