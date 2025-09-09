@@ -268,7 +268,7 @@ def main(args):
             "models/no-flanks/model5.ckpt",
         ]
 
-    model = EnsembleMunisModel(checkpoints)
+    model = EnsembleMunisModel(checkpoints, torch.device(args.device))
     model.eval()
     model.to(args.device)
 

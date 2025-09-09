@@ -36,7 +36,9 @@ The following options are available:
 
 To run an example you may run the following command to run predictions on an example protein:
 
-`python predict.py --fasta example.fasta --mhc HLA-A*02:01 --outdir ./ --cache`
+GPU: `python predict.py --fasta example.fasta --mhc HLA-A02:01 --outdir ./` 
+
+CPU: `python predict.py --fasta example.fasta --mhc HLA-A02:01 --outdir ./  --device cpu` 
 
 Running this example should take under a few seconds with a GPU and under 5 minutes on CPU.
 
